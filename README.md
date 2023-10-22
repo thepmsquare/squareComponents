@@ -11,7 +11,11 @@ reuseable react components for personal use.
 
 ## changelog
 
-### v1
+### v1.0.1
+
+- fix variant implementation in PasswordInput.
+
+### v1.0.0
 
 - initial implementation.
 
