@@ -1,0 +1,22 @@
+{
+  "name": "squarecomponents",
+  "version": "1.0.0",
+  "description": "reuseable react components for personal use.",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thepmsquare/squareComponents"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "UI"
+  ],
+  "author": "thePmSquare",
+  "license": "ISC",
+  "dependencies": {
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
+    "react": "^18.2.0"
+  }
+}
