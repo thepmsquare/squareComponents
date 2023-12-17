@@ -12,6 +12,9 @@
     "components",
     "UI"
   ],
+  "scripts": {
+    "test": ""
+  },
   "author": "thePmSquare",
   "license": "ISC",
   "dependencies": {
