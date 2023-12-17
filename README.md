@@ -11,6 +11,11 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.0.2
+
+- fix variant implementation in ThemeToggle.
+- add [LICENSE.md](LICENSE.md).
+
 ### v1.0.1
 
 - fix variant implementation in PasswordInput.

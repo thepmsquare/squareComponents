@@ -5,6 +5,7 @@ import {
   Button,
   ListItemText,
   ListItemIcon,
+  ButtonOwnProps,
 } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -13,6 +14,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 const ThemeToggle = (props: {
   themeState: "dark" | "light";
   customChangeThemeState: (newThemeState: "dark" | "light") => void;
+  variant: ButtonOwnProps["variant"];
 }) => {
   const [isThemeToggleMenuOpen, changeIsThemeToggleMenuOpen] = useState(false);
   const handleOpen = () => {
@@ -37,7 +39,7 @@ const ThemeToggle = (props: {
         ref={buttonRef}
         endIcon={<KeyboardArrowDownIcon />}
         size="small"
-        variant="outlined"
+        variant={props.variant}
       >
         change appearance
       </Button>
