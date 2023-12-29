@@ -16,7 +16,7 @@ const PasswordInput = (props: {
   onChange: ChangeEventHandler<HTMLInputElement>;
   label: string;
   uniqueIdForARIA: string;
-  variant: FormControlOwnProps["variant"];
+  variant?: FormControlOwnProps["variant"];
   others: any;
 }) => {
   const [showPassword, setShowPassword] = useState(false);

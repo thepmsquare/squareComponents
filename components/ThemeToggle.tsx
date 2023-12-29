@@ -14,7 +14,11 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 const ThemeToggle = (props: {
   themeState: "dark" | "light";
   customChangeThemeState: (newThemeState: "dark" | "light") => void;
-  variant: ButtonOwnProps["variant"];
+  variant?: ButtonOwnProps["variant"];
+  color?: ButtonOwnProps["color"];
+  downArrowIcon?: boolean;
+  modeIcons?: boolean;
+  size?: ButtonOwnProps["size"];
 }) => {
   const [isThemeToggleMenuOpen, changeIsThemeToggleMenuOpen] = useState(false);
   const handleOpen = () => {
@@ -37,9 +41,10 @@ const ThemeToggle = (props: {
         aria-expanded={isThemeToggleMenuOpen ? "true" : undefined}
         onClick={handleOpen}
         ref={buttonRef}
-        endIcon={<KeyboardArrowDownIcon />}
-        size="small"
+        endIcon={props.downArrowIcon && <KeyboardArrowDownIcon />}
+        size={props.size}
         variant={props.variant}
+        color={props.color}
       >
         change appearance
       </Button>
@@ -57,18 +62,22 @@ const ThemeToggle = (props: {
           onClick={() => changeThemeAndClose("dark")}
           selected={props.themeState === "dark"}
         >
-          <ListItemIcon>
-            <DarkModeIcon fontSize="small" />
-          </ListItemIcon>
+          {props.modeIcons && (
+            <ListItemIcon>
+              <DarkModeIcon fontSize="small" />
+            </ListItemIcon>
+          )}
           <ListItemText>dark mode</ListItemText>
         </MenuItem>
         <MenuItem
           onClick={() => changeThemeAndClose("light")}
           selected={props.themeState === "light"}
         >
-          <ListItemIcon>
-            <LightModeIcon fontSize="small" />
-          </ListItemIcon>
+          {props.modeIcons && (
+            <ListItemIcon>
+              <LightModeIcon fontSize="small" />
+            </ListItemIcon>
+          )}
           <ListItemText>light mode</ListItemText>
         </MenuItem>
       </Menu>

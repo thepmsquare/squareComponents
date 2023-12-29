@@ -11,12 +11,17 @@ reuseable react components for personal use.
 
 ## changelog
 
-### v1.0.2
+### v1.0.3
+
+- add props in ThemeToggle component.
+- make some props optional to fix backwards compatibility issues.
+
+### v1.0.2 (Breaking Change Bug)
 
 - fix variant implementation in ThemeToggle.
 - add [LICENSE.md](LICENSE.md).
 
-### v1.0.1
+### v1.0.1 (Breaking Change Bug)
 
 - fix variant implementation in PasswordInput.
 
