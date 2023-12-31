@@ -5,6 +5,7 @@ import type CustomSnackbarStateType from "../types/CustomSnackbarStateType";
 const CustomSnackbar = (props: {
   snackbarState: CustomSnackbarStateType;
   changeSnackbarState: Dispatch<CustomSnackbarStateType>;
+  autoHideDuration?: number;
 }) => {
   const handleSnackbarClose = () => {
     props.changeSnackbarState({
@@ -17,7 +18,7 @@ const CustomSnackbar = (props: {
   return (
     <Snackbar
       open={props.snackbarState.isOpen}
-      autoHideDuration={6000}
+      autoHideDuration={props.autoHideDuration ?? 6000}
       onClose={handleSnackbarClose}
     >
       <Alert
