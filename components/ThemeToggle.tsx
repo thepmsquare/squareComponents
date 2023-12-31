@@ -6,6 +6,7 @@ import {
   ListItemText,
   ListItemIcon,
   ButtonOwnProps,
+  SvgIconOwnProps,
 } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -19,6 +20,8 @@ const ThemeToggle = (props: {
   downArrowIcon?: boolean;
   modeIcons?: boolean;
   size?: ButtonOwnProps["size"];
+  modeIconsSize?: SvgIconOwnProps["fontSize"];
+  fullwidth?: boolean;
 }) => {
   const [isThemeToggleMenuOpen, changeIsThemeToggleMenuOpen] = useState(false);
   const handleOpen = () => {
@@ -31,7 +34,7 @@ const ThemeToggle = (props: {
     props.customChangeThemeState(newTheme);
     handleClose();
   };
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<any>(null);
   return (
     <>
       <Button
@@ -61,10 +64,16 @@ const ThemeToggle = (props: {
         <MenuItem
           onClick={() => changeThemeAndClose("dark")}
           selected={props.themeState === "dark"}
+          sx={{
+            width:
+              buttonRef.current && props.fullwidth
+                ? getComputedStyle(buttonRef.current).width
+                : "",
+          }}
         >
           {props.modeIcons && (
             <ListItemIcon>
-              <DarkModeIcon fontSize="small" />
+              <DarkModeIcon fontSize={props.modeIconsSize} />
             </ListItemIcon>
           )}
           <ListItemText>dark mode</ListItemText>
@@ -72,10 +81,16 @@ const ThemeToggle = (props: {
         <MenuItem
           onClick={() => changeThemeAndClose("light")}
           selected={props.themeState === "light"}
+          sx={{
+            width:
+              buttonRef.current && props.fullwidth
+                ? getComputedStyle(buttonRef.current).width
+                : "",
+          }}
         >
           {props.modeIcons && (
             <ListItemIcon>
-              <LightModeIcon fontSize="small" />
+              <LightModeIcon fontSize={props.modeIconsSize} />
             </ListItemIcon>
           )}
           <ListItemText>light mode</ListItemText>
