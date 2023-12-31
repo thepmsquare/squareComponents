@@ -17,7 +17,7 @@ const PasswordInput = (props: {
   label: string;
   uniqueIdForARIA: string;
   variant?: FormControlOwnProps["variant"];
-  others: any;
+  others?: any;
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -77,7 +77,7 @@ const PasswordInput = (props: {
           label={props.label}
         />
       )}
-      {props.variant === "standard" && (
+      {(props.variant === "standard" || !props.variant) && (
         <Input
           id={props.uniqueIdForARIA}
           type={showPassword ? "text" : "password"}
