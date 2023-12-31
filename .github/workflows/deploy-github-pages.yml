@@ -19,4 +19,4 @@ jobs:
       - id: build-publish
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
         with:
-          path: build # change to your build folder
+          path: storybook-static
