@@ -11,6 +11,16 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.0.4
+
+- add types and missing dependencies in package.json.
+- add storybook.
+- add new component ThemeToggleIconButton.
+- add modeIconsSize, fullwidth as optional props to ThemeToggle component.
+- make `others` prop optional in the PasswordInput component.
+- bug fix render PasswordInput even if no variant was passed.
+- add autoHideDuration as optional prop to CustomSnackbar component.
+
 ### v1.0.3
 
 - add props in ThemeToggle component.
