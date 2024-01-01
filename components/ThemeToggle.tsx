@@ -68,7 +68,7 @@ const ThemeToggle = (props: {
             width:
               buttonRef.current && props.fullwidth
                 ? getComputedStyle(buttonRef.current).width
-                : "",
+                : "initial",
           }}
         >
           {props.modeIcons && (
@@ -85,7 +85,7 @@ const ThemeToggle = (props: {
             width:
               buttonRef.current && props.fullwidth
                 ? getComputedStyle(buttonRef.current).width
-                : "",
+                : "initial",
           }}
         >
           {props.modeIcons && (
