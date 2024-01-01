@@ -4,12 +4,25 @@
 
 reuseable react components for personal use.
 
+## components
+
+- CustomSnackbar
+- PasswordInput
+- ThemeToggle
+- ThemeToggleIconButton
+
 ## env
 
 1. node js - v18.17.0
 2. npm - v9.6.7
 
 ## changelog
+
+### v1.0.5
+
+- fix workflow to deploy storybook on github pages.
+- add dev script.
+- fix bug when `fullwidth` was set to false in ThemeToggle component.
 
 ### v1.0.4
 
