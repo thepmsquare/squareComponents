@@ -18,6 +18,10 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.0.6
+
+- experimental bug fix
+
 ### v1.0.5
 
 - fix workflow to deploy storybook on github pages.
