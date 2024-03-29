@@ -1,12 +1,13 @@
 import React from "react";
+
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import {
-  IconButton,
   ButtonOwnProps,
+  IconButton,
   IconButtonOwnProps,
   Tooltip,
 } from "@mui/material";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
 
 const ThemeToggleIconButton = (props: {
   themeState: "dark" | "light";

@@ -34,4 +34,3 @@ const CustomSnackbar = (props: {
   );
 };
 export default CustomSnackbar;
-export { CustomSnackbarStateType };

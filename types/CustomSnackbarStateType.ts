@@ -1,7 +1,8 @@
 import { AlertColor } from "@mui/material/Alert";
 
-export default interface CustomSnackbarStateType {
+interface CustomSnackbarStateType {
   isOpen: boolean;
   message: string;
   severity: AlertColor;
 }
+export default CustomSnackbarStateType;

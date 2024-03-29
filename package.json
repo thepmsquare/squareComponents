@@ -1,6 +1,6 @@
 {
   "name": "squarecomponents",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "reuseable react components for personal use.",
   "main": "index.ts",
   "types": "types",

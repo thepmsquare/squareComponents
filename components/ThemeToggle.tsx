@@ -1,16 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
+
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import {
+  Button,
+  ButtonOwnProps,
+  ListItemIcon,
+  ListItemText,
   Menu,
   MenuItem,
-  Button,
-  ListItemText,
-  ListItemIcon,
-  ButtonOwnProps,
   SvgIconOwnProps,
 } from "@mui/material";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
 
 const ThemeToggle = (props: {
   themeState: "dark" | "light";
