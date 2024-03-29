@@ -18,6 +18,10 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.0.7
+
+- experimental bug fix 2
+
 ### v1.0.6
 
 - experimental bug fix

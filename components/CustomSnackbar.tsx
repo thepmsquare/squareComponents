@@ -1,6 +1,8 @@
 import React, { Dispatch } from "react";
-import { Snackbar, Alert } from "@mui/material";
-import type CustomSnackbarStateType from "../types/CustomSnackbarStateType";
+
+import { Alert, Snackbar } from "@mui/material";
+
+import CustomSnackbarStateType from "../types/CustomSnackbarStateType";
 
 const CustomSnackbar = (props: {
   snackbarState: CustomSnackbarStateType;
@@ -32,4 +34,4 @@ const CustomSnackbar = (props: {
   );
 };
 export default CustomSnackbar;
-export type { CustomSnackbarStateType };
+export { CustomSnackbarStateType };
