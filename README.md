@@ -18,6 +18,11 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.3.0
+
+- ThemeToggleIconButton
+  - add prop useFab.
+
 ### v1.2.0
 
 - update storyboard version.
