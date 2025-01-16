@@ -18,6 +18,10 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.2.0
+
+- update storyboard version.
+
 ### v1.1.0
 
 - ThemeToggleIconButton

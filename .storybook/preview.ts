@@ -1,7 +1,9 @@
 /** @type { import('@storybook/react').Preview } */
+import { fn } from "@storybook/test";
+
 const preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    args: { onClick: fn() },
     controls: {
       matchers: {
         color: /(background|color)$/i,
