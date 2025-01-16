@@ -8,12 +8,17 @@ import {
   IconButtonOwnProps,
   Tooltip,
 } from "@mui/material";
+import { IconButtonProps as MuiIconButtonProps } from "@mui/material/IconButton";
 
 const ThemeToggleIconButton = (props: {
   themeState: "dark" | "light";
   customChangeThemeState: (newThemeState: "dark" | "light") => void;
   color?: ButtonOwnProps["color"];
   size?: IconButtonOwnProps["size"];
+  iconButtonProps?: Omit<
+    MuiIconButtonProps,
+    "onClick" | "ref" | "size" | "color"
+  >;
 }) => {
   return (
     <IconButton
@@ -21,6 +26,7 @@ const ThemeToggleIconButton = (props: {
       size={props.size}
       color={props.color}
       onClick={() => props.customChangeThemeState(props.themeState)}
+      {...props.iconButtonProps}
     >
       {props.themeState === "dark" ? (
         <Tooltip title="change to dark mode.">

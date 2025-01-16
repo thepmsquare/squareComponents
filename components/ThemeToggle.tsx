@@ -12,6 +12,7 @@ import {
   MenuItem,
   SvgIconOwnProps,
 } from "@mui/material";
+import { ButtonProps as MuiButtonProps } from "@mui/material/Button";
 
 const ThemeToggle = (props: {
   themeState: "dark" | "light";
@@ -23,6 +24,10 @@ const ThemeToggle = (props: {
   size?: ButtonOwnProps["size"];
   modeIconsSize?: SvgIconOwnProps["fontSize"];
   fullwidth?: boolean;
+  buttonProps?: Omit<
+    MuiButtonProps,
+    "onClick" | "ref" | "endIcon" | "size" | "variant" | "color"
+  >;
 }) => {
   const [isThemeToggleMenuOpen, changeIsThemeToggleMenuOpen] = useState(false);
   const handleOpen = () => {
@@ -49,6 +54,7 @@ const ThemeToggle = (props: {
         size={props.size}
         variant={props.variant}
         color={props.color}
+        {...props.buttonProps}
       >
         change appearance
       </Button>

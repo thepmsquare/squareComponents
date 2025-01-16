@@ -18,6 +18,13 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.1.0
+
+- ThemeToggleIconButton
+  - add iconButtonProps.
+- ThemeToggle
+  - add buttonProps.
+
 ### v1.0.8
 
 - experimental bug fix 3
