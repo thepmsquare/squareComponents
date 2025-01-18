@@ -18,6 +18,10 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.4.0
+
+- convert all types to zod.
+
 ### v1.3.0
 
 - ThemeToggleIconButton
