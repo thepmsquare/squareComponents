@@ -13,7 +13,6 @@ export default {
     currentPageNumber: 1,
     handlePageChange: () => {},
     totalRowsCount: 2,
-    pageSize: 2,
     isLoading: false,
   },
 };

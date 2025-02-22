@@ -18,10 +18,14 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.5.1
+
+- remove extra parameter from PaginatedTable default args in storybook.
+
 ### v1.5.0
 
 - add PaginatedTable.
-- updated storybook version
+- updated storybook version.
 
 ### v1.4.0
 
