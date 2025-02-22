@@ -18,6 +18,11 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.5.0
+
+- add PaginatedTable.
+- updated storybook version
+
 ### v1.4.0
 
 - convert all types to zod.
