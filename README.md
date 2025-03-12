@@ -18,6 +18,10 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.6.1
+
+- bugfix in AlertDialog story.
+
 ### v1.6.0
 
 - add AlertDialog.
