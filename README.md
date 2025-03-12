@@ -18,6 +18,10 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.6.0
+
+- add AlertDialog.
+
 ### v1.5.1
 
 - remove extra parameter from PaginatedTable default args in storybook.
