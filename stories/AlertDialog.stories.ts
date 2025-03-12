@@ -5,9 +5,7 @@ export default {
   component: AlertDialog,
   args: {
     open: true,
-    handleClose: () => {},
     title: "confirm?",
-    handleSuccess: () => {},
     confirmButtonColor: "error",
     text: "description",
     isLoading: false
