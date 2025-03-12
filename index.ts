@@ -4,3 +4,4 @@ export { default as PasswordInput } from "./components/PasswordInput";
 export { default as ThemeToggle } from "./components/ThemeToggle";
 export { default as PaginatedTable } from "./components/PaginatedTable";
 export { Row } from "./types/PaginatedTableType";
+export { default as AlertDialog } from "./components/AlertDialog";
