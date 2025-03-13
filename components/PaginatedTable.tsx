@@ -21,6 +21,7 @@ const PaginatedTable = (props: {
   handlePageChange: (event: React.ChangeEvent<unknown>, value: number) => void;
   totalRowsCount: number;
   isLoading: boolean;
+  pageSize: number;
 }) => {
   return (
     <TableContainer component={Paper}>
@@ -51,7 +52,7 @@ const PaginatedTable = (props: {
               </TableBody>
             </Table>
             <Pagination
-              count={Math.ceil(props.totalRowsCount / props.rows.length)}
+              count={Math.ceil(props.totalRowsCount / props.pageSize)}
               showFirstButton
               showLastButton
               page={props.currentPageNumber}

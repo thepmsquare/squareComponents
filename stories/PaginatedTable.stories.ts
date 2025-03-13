@@ -14,6 +14,7 @@ export default {
     handlePageChange: () => {},
     totalRowsCount: 2,
     isLoading: false,
+    pageSize: 10,
   },
 };
 

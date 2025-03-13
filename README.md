@@ -18,6 +18,11 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.6.2
+
+- add pageSize prop in PaginatedTable.
+- updated storybook version.
+
 ### v1.6.1
 
 - bugfix in AlertDialog story.
