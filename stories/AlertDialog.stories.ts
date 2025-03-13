@@ -8,7 +8,7 @@ export default {
     title: "confirm?",
     confirmButtonColor: "error",
     text: "description",
-    isLoading: false
+    isLoading: false,
   },
 };
 
