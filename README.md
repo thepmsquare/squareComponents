@@ -18,6 +18,12 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.6.4
+
+- ThemeToggleIconButton
+  - fix export.
+  - fix bug in customChangeThemeState implementation.
+
 ### v1.6.3
 
 - improve styling for PaginatedTable.

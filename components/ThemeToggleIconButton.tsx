@@ -7,7 +7,7 @@ import {
   Fab,
   IconButton,
   IconButtonOwnProps,
-  Tooltip
+  Tooltip,
 } from "@mui/material";
 import { FabProps as MuiFabProps } from "@mui/material/Fab";
 import { IconButtonProps as MuiIconButtonProps } from "@mui/material/IconButton";
@@ -29,7 +29,11 @@ const ThemeToggleIconButton = (props: {
       id="toggle-theme-button"
       size={props.size}
       color={props.color}
-      onClick={() => props.customChangeThemeState(props.themeState)}
+      onClick={() =>
+        props.customChangeThemeState(
+          props.themeState === "dark" ? "light" : "dark"
+        )
+      }
       {...props.fabProps}
     >
       {props.themeState === "dark" ? (
@@ -47,7 +51,11 @@ const ThemeToggleIconButton = (props: {
       id="toggle-theme-button"
       size={props.size}
       color={props.color}
-      onClick={() => props.customChangeThemeState(props.themeState)}
+      onClick={() =>
+        props.customChangeThemeState(
+          props.themeState === "dark" ? "light" : "dark"
+        )
+      }
       {...props.iconButtonProps}
     >
       {props.themeState === "dark" ? (
