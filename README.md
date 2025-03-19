@@ -18,6 +18,11 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.7.0
+
+- PaginatedTable
+  - new optional prop caption.
+
 ### v1.6.4
 
 - ThemeToggleIconButton

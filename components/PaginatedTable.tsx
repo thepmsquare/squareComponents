@@ -26,6 +26,7 @@ const PaginatedTable = (props: {
   totalRowsCount: number;
   isLoading: boolean;
   pageSize: number;
+  caption?: string;
 }) => {
   return (
     <>
@@ -40,6 +41,7 @@ const PaginatedTable = (props: {
           <TableContainer component={Paper}>
             {props.rows && props.rows.length > 0 && (
               <Table stickyHeader aria-label={props.tableAriaLabel}>
+                {props.caption && <caption>{props.caption}</caption>}
                 <TableHead>
                   <TableRow>
                     {Object.keys(props.rows[0]).map((key) => (
