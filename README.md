@@ -18,6 +18,11 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.8.0
+
+- PaginatedTable
+  - hidePaginationOnSinglePage
+
 ### v1.7.0
 
 - PaginatedTable

@@ -27,6 +27,7 @@ const PaginatedTable = (props: {
   isLoading: boolean;
   pageSize: number;
   caption?: string;
+  hidePaginationOnSinglePage?: boolean;
 }) => {
   return (
     <>
@@ -61,16 +62,19 @@ const PaginatedTable = (props: {
               </Table>
             )}
           </TableContainer>
-          <TablePagination
-            component="div"
-            count={props.totalRowsCount}
-            rowsPerPage={props.pageSize}
-            showFirstButton
-            showLastButton
-            page={props.currentPageNumber - 1}
-            onPageChange={props.handlePageChange}
-            rowsPerPageOptions={[props.pageSize]}
-          />
+          {props.hidePaginationOnSinglePage &&
+          props.totalRowsCount <= props.pageSize ? null : (
+            <TablePagination
+              component="div"
+              count={props.totalRowsCount}
+              rowsPerPage={props.pageSize}
+              showFirstButton
+              showLastButton
+              page={props.currentPageNumber - 1}
+              onPageChange={props.handlePageChange}
+              rowsPerPageOptions={[props.pageSize]}
+            />
+          )}
         </>
       )}
     </>
