@@ -6,7 +6,9 @@ reuseable react components for personal use.
 
 ## components
 
+- AlertDialog
 - CustomSnackbar
+- PaginatedTable
 - PasswordInput
 - ThemeToggle
 - ThemeToggleIconButton
@@ -18,10 +20,15 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.9.0
+
+- AlertDialog
+  - new optional prop cancleButtonColor.
+
 ### v1.8.0
 
 - PaginatedTable
-  - hidePaginationOnSinglePage
+  - new optional prop hidePaginationOnSinglePage.
 
 ### v1.7.0
 
