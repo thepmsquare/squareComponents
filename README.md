@@ -25,6 +25,7 @@ reuseable react components for personal use.
 - PasswordInput
   - refactor code.
 - add new component UsernameInput.
+- updated storybook version.
 
 ### v1.9.0
 
