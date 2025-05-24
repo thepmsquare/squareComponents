@@ -20,6 +20,11 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.10.1
+
+- UsernameInput
+  - export in index file.
+
 ### v1.10.0
 
 - PasswordInput
