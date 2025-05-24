@@ -20,6 +20,12 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.10.0
+
+- PasswordInput
+  - refactor code.
+- add new component UsernameInput.
+
 ### v1.9.0
 
 - AlertDialog

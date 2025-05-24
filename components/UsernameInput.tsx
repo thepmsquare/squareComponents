@@ -1,21 +1,20 @@
-import React, { ChangeEventHandler, useState } from "react";
+import React, { ChangeEvent } from "react";
 
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import {
   FilledInput,
   FormControl,
   FormControlOwnProps,
-  IconButton,
   Input,
   InputAdornment,
   InputLabel,
   OutlinedInput,
 } from "@mui/material";
 
-const PasswordInput = (props: {
+const USERNAME_REGEX = /^[a-z0-9._-]{2,20}$/;
+
+const UsernameInput = (props: {
   value: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   label: string;
   uniqueIdForARIA: string;
   variant?: FormControlOwnProps["variant"];
@@ -30,27 +29,30 @@ const PasswordInput = (props: {
     others,
   } = props;
 
-  const [showPassword, setShowPassword] = useState(false);
-  const toggleShowPassword = () => setShowPassword((prev) => !prev);
+  const handleSanitizedChange = (e: ChangeEvent<HTMLInputElement>) => {
+    let sanitized = e.target.value
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^a-z0-9._-]/g, "");
+
+    if (sanitized.length > 20) return;
+
+    const syntheticEvent = {
+      ...e,
+      target: { ...e.target, value: sanitized },
+    } as ChangeEvent<HTMLInputElement>;
+
+    onChange(syntheticEvent);
+  };
+
+  const isValid = USERNAME_REGEX.test(value);
 
   const commonInputProps = {
     id: uniqueIdForARIA,
-    type: showPassword ? "text" : "password",
     value,
-    onChange,
+    onChange: handleSanitizedChange,
     autoComplete: "off",
-    endAdornment: (
-      <InputAdornment position="end">
-        <IconButton
-          aria-label="toggle password visibility"
-          onClick={toggleShowPassword}
-          onMouseDown={(e) => e.preventDefault()}
-          edge="end"
-        >
-          {showPassword ? <VisibilityOff /> : <Visibility />}
-        </IconButton>
-      </InputAdornment>
-    ),
+    error: !isValid && value.length > 0,
     ...others,
   };
 
@@ -68,4 +70,4 @@ const PasswordInput = (props: {
   );
 };
 
-export default PasswordInput;
+export default UsernameInput;
