@@ -1,5 +1,5 @@
-/** @type { import('@storybook/react').Preview } */
-import { fn } from "@storybook/test";
+/** @type { import('@storybook/react-webpack5').Preview } */
+import { fn } from "storybook/test";
 
 const preview = {
   parameters: {

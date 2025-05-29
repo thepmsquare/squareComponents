@@ -20,6 +20,12 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v1.10.2
+
+- UsernameInput + PasswordInput
+  - refactor code and switch to Textfield component.
+- updated storybook version.
+
 ### v1.10.1
 
 - UsernameInput
