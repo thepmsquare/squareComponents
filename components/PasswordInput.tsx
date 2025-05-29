@@ -3,24 +3,35 @@ import React, { ChangeEventHandler, useState } from "react";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import {
-  FilledInput,
-  FormControl,
-  FormControlOwnProps,
   IconButton,
-  Input,
   InputAdornment,
-  InputLabel,
-  OutlinedInput,
+  InputProps,
+  TextField,
+  TextFieldProps,
 } from "@mui/material";
 
-const PasswordInput = (props: {
+interface PasswordInputProps {
   value: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  onChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   label: string;
   uniqueIdForARIA: string;
-  variant?: FormControlOwnProps["variant"];
-  others?: any;
-}) => {
+  variant?: TextFieldProps["variant"];
+  others?: Omit<
+    TextFieldProps,
+    | "value"
+    | "onChange"
+    | "label"
+    | "id"
+    | "variant"
+    | "type"
+    | "InputProps"
+    | "fullWidth"
+    | "InputLabelProps"
+  >;
+  fullWidth?: boolean;
+}
+
+const PasswordInput = (props: PasswordInputProps) => {
   const {
     value,
     onChange,
@@ -28,43 +39,45 @@ const PasswordInput = (props: {
     uniqueIdForARIA,
     variant = "standard",
     others,
+    fullWidth = true,
   } = props;
 
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => setShowPassword((prev) => !prev);
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
 
-  const commonInputProps = {
-    id: uniqueIdForARIA,
-    type: showPassword ? "text" : "password",
-    value,
-    onChange,
-    autoComplete: "off",
+  const inputProps: Partial<InputProps> = {
     endAdornment: (
       <InputAdornment position="end">
         <IconButton
           aria-label="toggle password visibility"
           onClick={toggleShowPassword}
-          onMouseDown={(e) => e.preventDefault()}
+          onMouseDown={handleMouseDownPassword}
           edge="end"
         >
           {showPassword ? <VisibilityOff /> : <Visibility />}
         </IconButton>
       </InputAdornment>
     ),
-    ...others,
-  };
-
-  const renderInput = () => {
-    if (variant === "filled") return <FilledInput {...commonInputProps} />;
-    if (variant === "outlined") return <OutlinedInput {...commonInputProps} />;
-    return <Input {...commonInputProps} />;
   };
 
   return (
-    <FormControl variant={variant}>
-      <InputLabel htmlFor={uniqueIdForARIA}>{label}</InputLabel>
-      {renderInput()}
-    </FormControl>
+    <TextField
+      id={uniqueIdForARIA}
+      label={label}
+      variant={variant}
+      type={showPassword ? "text" : "password"}
+      value={value}
+      onChange={onChange}
+      autoComplete="current-password"
+      InputProps={inputProps}
+      fullWidth={fullWidth}
+      {...others}
+    />
   );
 };
 
