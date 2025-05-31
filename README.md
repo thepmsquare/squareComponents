@@ -23,7 +23,7 @@ reuseable react components for personal use.
 ### v1.10.3
 
 - UsernameInput + PasswordInput
-  - enhance props handling and add autoComplete support
+  - enhance props handling and add autoComplete support.
 
 ### v1.10.2
 
