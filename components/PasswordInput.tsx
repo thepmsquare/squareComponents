@@ -29,6 +29,7 @@ interface PasswordInputProps {
     | "InputLabelProps"
   >;
   fullWidth?: boolean;
+  autoComplete?: string;
 }
 
 const PasswordInput = (props: PasswordInputProps) => {
@@ -39,7 +40,8 @@ const PasswordInput = (props: PasswordInputProps) => {
     uniqueIdForARIA,
     variant = "standard",
     others,
-    fullWidth = true,
+    fullWidth = false,
+    autoComplete = "current-password",
   } = props;
 
   const [showPassword, setShowPassword] = useState(false);
@@ -73,7 +75,7 @@ const PasswordInput = (props: PasswordInputProps) => {
       type={showPassword ? "text" : "password"}
       value={value}
       onChange={onChange}
-      autoComplete="current-password"
+      autoComplete={autoComplete}
       InputProps={inputProps}
       fullWidth={fullWidth}
       {...others}

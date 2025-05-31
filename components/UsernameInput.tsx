@@ -14,6 +14,8 @@ interface UsernameInputProps {
     TextFieldProps,
     "value" | "onChange" | "label" | "id" | "variant" | "error" | "autoComplete"
   >;
+  fullWidth?: boolean;
+  autocomplete?: string;
 }
 
 const UsernameInput = (props: UsernameInputProps) => {
@@ -24,6 +26,8 @@ const UsernameInput = (props: UsernameInputProps) => {
     uniqueIdForARIA,
     variant = "standard",
     others,
+    autocomplete = "off",
+    fullWidth = false,
   } = props;
 
   /**
@@ -44,44 +48,37 @@ const UsernameInput = (props: UsernameInputProps) => {
       .replace(/\s+/g, "-") // Replace spaces with hyphens
       .replace(/[^a-z0-9._-]/g, ""); // Remove invalid characters
 
-    // Enforce maximum length
     if (sanitized.length > 20) {
-      // Truncate if longer than 20 characters.
-      // No explicit return here to allow the onChange to be called with the truncated value.
       sanitized = sanitized.substring(0, 20);
     }
 
-    // Create a synthetic event to pass to the parent onChange handler
-    // This ensures the parent receives an event object with the sanitized value.
     const syntheticEvent = {
       ...e,
       target: { ...e.target, value: sanitized },
-    } as ChangeEvent<HTMLInputElement | HTMLTextAreaElement>; // Cast to the correct event type
+    } as ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
-    onChange(syntheticEvent); // Call the original onChange handler
+    onChange(syntheticEvent);
   };
 
-  // Validate the current input value against the regex
   const isValid = USERNAME_REGEX.test(value);
-  // Determine if an error should be shown (invalid and not empty)
-  const showError = !isValid && value.length > 0;
+  const showError = !isValid && value.length > 2;
 
   return (
     <TextField
-      id={uniqueIdForARIA} // Set the ID for accessibility and label association
-      label={label} // Set the input label
-      variant={variant} // Set the input style (standard, outlined, filled)
-      value={value} // The current value of the input
-      onChange={handleSanitizedChange} // Attach the sanitizing change handler
-      autoComplete="off" // Disable browser autocomplete
-      error={showError} // Show error state if invalid and not empty
+      id={uniqueIdForARIA}
+      label={label}
+      variant={variant}
+      value={value}
+      onChange={handleSanitizedChange}
+      autoComplete={autocomplete}
+      error={showError}
       helperText={
         showError
           ? "Username must be 2-20 characters and can only contain a-z, 0-9, '.', '_', '-'."
           : ""
-      } // Optional: Add helper text for errors
-      fullWidth // Optional: Make the TextField take up the full width of its container
-      {...others} // Spread any other props
+      }
+      fullWidth={fullWidth}
+      {...others}
     />
   );
 };
