@@ -25,6 +25,7 @@ export default function AlertDialog(props: {
       onClose={props.handleClose}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
+      disableEscapeKeyDown={props.isLoading}
     >
       <DialogTitle id="alert-dialog-title">{props.title}</DialogTitle>
       <DialogContent>
