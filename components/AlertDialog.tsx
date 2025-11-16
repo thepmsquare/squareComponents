@@ -14,7 +14,7 @@ export default function AlertDialog(props: {
   title: string;
   handleSuccess: () => void;
   confirmButtonColor: ButtonOwnProps["color"];
-  cancleButtonColor?: ButtonOwnProps["color"];
+  cancelButtonColor?: ButtonOwnProps["color"];
   text?: string;
   isLoading?: boolean;
 }) {
@@ -35,7 +35,8 @@ export default function AlertDialog(props: {
         <Button
           onClick={props.handleClose}
           disabled={props.isLoading}
-          color={props.cancleButtonColor || "inherit"}
+          color={props.cancelButtonColor || "inherit"}
+          
         >
           cancel
         </Button>
