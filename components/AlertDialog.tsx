@@ -17,6 +17,7 @@ export default function AlertDialog(props: {
   cancelButtonColor?: ButtonOwnProps["color"];
   text?: string;
   isLoading?: boolean;
+  autoFocus?: "cancel" | "confirm" | undefined;
 }) {
   return (
     <Dialog
@@ -36,7 +37,7 @@ export default function AlertDialog(props: {
           onClick={props.handleClose}
           disabled={props.isLoading}
           color={props.cancelButtonColor || "inherit"}
-          
+          autoFocus={props.autoFocus === "cancel"}
         >
           cancel
         </Button>
@@ -44,6 +45,7 @@ export default function AlertDialog(props: {
           onClick={props.handleSuccess}
           color={props.confirmButtonColor}
           disabled={props.isLoading}
+          autoFocus={props.autoFocus === "confirm"}
         >
           {props.isLoading ? <CircularProgress /> : "confirm"}
         </Button>
