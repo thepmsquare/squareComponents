@@ -20,6 +20,14 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v2.0.0
+
+- updated storybook version.
+- AlertDialog
+  - **breaking change**: fix typo cancleButtonColor -> cancelButtonColor.
+  - add disableEscapeKeyDown to dialog when loading.
+  - add new optional prop autoFocus for cancel or confirm button.
+
 ### v1.10.3
 
 - UsernameInput + PasswordInput
