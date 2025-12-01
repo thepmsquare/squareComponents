@@ -20,6 +20,10 @@ reuseable react components for personal use.
 
 ## changelog
 
+### v2.0.1
+
+- reorganise imports in index.ts
+
 ### v2.0.0
 
 - updated storybook version.
